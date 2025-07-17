@@ -1,3 +1,4 @@
+@import "./normalize.css";
 :root {
     --color-primary: #2584ff;
     --color-secondary: #00d9ff;
@@ -279,12 +280,12 @@ a{
 
 /*Inputs*/
 .input{
-    padding: 1.5rem 2rem;
-    border: 1px solid var(--color-border);
     border-radius: var(--border-radius);
-    outline:0;
+    border: 1px solid var(--color-border);
     color: var(--color-headings);
     font-size: 2rem;
+    outline:0;
+    padding: 1.5rem 2rem;
 }
 
 ::placeholder{
@@ -300,6 +301,8 @@ a{
 .input-group .input{
     border: 0;
     flex-grow: 1;
+    padding: 1.5rem 2rem;
+    width: 0;
 }
 
 .input-group .btn{
@@ -321,7 +324,7 @@ a{
 
 .card__header,
 .card__body{
-    padding: 2rem 3rem;
+    padding: 2rem 7%;
 }
 
 .card--primary .card__header{
@@ -402,6 +405,10 @@ a{
 }
 
 @media screen and (min-width: 1024px) {
+    .plan--popular {
+        transform: scale(1.1);
+    }
+
     .plan__name{
         font-size: 1.4rem;
     }
@@ -522,7 +529,7 @@ a{
     right: -32px;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
     .testimonial .quote,
     .testimonial .quote__author {
         font-size: 2.4rem;
@@ -602,8 +609,7 @@ a{
 }
 
 .collapsible--expanded .collapsible__content{
-    display: block;
-    max-height: 100vh;
+    max-height: 100%;
     opacity: 1;
 }
 
@@ -663,6 +669,10 @@ a{
     border-bottom: 1px solid #222;
 }
 
+.nav__item:last-of-type{
+    border-bottom: none;
+}
+
 .nav__item > a{
     color: #d2d0db;
     transition: color 0.3s;
@@ -686,6 +696,7 @@ a{
 
 .nav__brand{
     transform: translateY(5px);
+    width: 150px;
 }
 
 @media screen and (min-width: 768px) {
@@ -738,8 +749,9 @@ a{
 }
 
 .block-domain__prices{
+    color: var(--color-headings);
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 6rem);
     font-size: 2rem;
     font-weight: 600;
